@@ -136,3 +136,4 @@ C:\Users\MARCEL\OneDrive\PROGRAMACION1 - CLASE\PC3 - API\GlovoSoft\obj\Debug\net
 C:\Users\MARCEL\OneDrive\PROGRAMACION1 - CLASE\PC3 - API\GlovoSoft\obj\Debug\net8.0\GlovoSoft.pdb
 C:\Users\MARCEL\OneDrive\PROGRAMACION1 - CLASE\PC3 - API\GlovoSoft\obj\Debug\net8.0\GlovoSoft.genruntimeconfig.cache
 C:\Users\MARCEL\OneDrive\PROGRAMACION1 - CLASE\PC3 - API\GlovoSoft\obj\Debug\net8.0\ref\GlovoSoft.dll
+C:\Users\MARCEL\OneDrive\PROGRAMACION1 - CLASE\PC3 - API\GlovoSoft\obj\Debug\net8.0\GlovoSoft.sourcelink.json

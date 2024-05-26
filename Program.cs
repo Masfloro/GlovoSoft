@@ -17,6 +17,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<CrearUsuarioApiIntegration, CrearUsuarioApiIntegration>();
 builder.Services.AddScoped<ListarUsuariosApiIntegration,ListarUsuariosApiIntegration>();
+builder.Services.AddScoped<ListarUsuarioApiIntegration,ListarUsuarioApiIntegration>();
 
 var app = builder.Build();
 

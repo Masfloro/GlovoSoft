@@ -4,19 +4,29 @@
     <thead>
         <tr>
             <th>Id</th>
-            <th>Name</th>
-            <th>Job</th>
+            <th>Email</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Avatar</th>
+            <th>Perfil</th>
         </tr>
     </thead>
     <tbody>
+
         @if (Model != null && Model.Count > 0)
         {
             foreach (var user in Model)
             {
                 <tr>
+
                     <td>@user.Id</td>
-                    <td>@user.Name</td>
-                    <td>@user.Job</td>
+                    <td>@user.Email</td>
+                    <td>@user.first_name</td>
+                    <td>@user.last_name</td>
+                    <td><img src="@user.Avatar" alt="Avatar" class="img-fluid rounded-circle" style="width:50px;height:50px;" />
+                    </td>
+                    <td><a href="@Url.Action("Usuario", new { Id = user.Id })" class="btn btn-outline-secondary btn-sm">Ir a
+                            Perfil</a></td>
                 </tr>
             }
         }

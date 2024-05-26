@@ -44,6 +44,8 @@ public class CrearUsuarioApiIntegration
 
                 apiResponse= JsonSerializer.Deserialize<ApiResponse>(respondeBody);
 
+                Console.WriteLine(apiResponse);
+
             }
 
             else{

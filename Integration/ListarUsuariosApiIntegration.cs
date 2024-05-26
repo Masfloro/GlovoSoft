@@ -45,8 +45,6 @@ public class ListarUsuariosApiIntegration
             _logger.LogDebug($"Error al llamar a la API: {ex.Message}");
         }
 
-        Console.Write("asdasd");
-
         return listado;
 
     }
@@ -54,7 +52,12 @@ public class ListarUsuariosApiIntegration
 
     class ApiResponse
     {
+        public int Page { get; set; }
+        public int PerPage { get; set; }
+        public int Total { get; set; }
+        public int TotalPages { get; set; }
         public List<Usuario> Data { get; set; }
+        public Support Support { get; set; }
     }
 }
 

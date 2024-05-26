@@ -4,6 +4,7 @@ using GlovoSoft.Integration;
 using GlovoSoft.Integration.DTO;
 using GlovoSoft.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace GlovoSoft.Controllers;
 public class UsuarioController : Controller
@@ -11,24 +12,24 @@ public class UsuarioController : Controller
     private readonly ILogger<UsuarioController> _logger;
 
     private readonly ListarUsuariosApiIntegration _listarUsuarios;
-    //private readonly ListarUsuarioApiIntegration _listarUsuario;
+    private readonly ListarUsuarioApiIntegration _listarUsuario;
     private readonly CrearUsuarioApiIntegration _crearUsuario;
 
-    public UsuarioController(ILogger<UsuarioController> logger, ListarUsuariosApiIntegration listarUsuarios ,CrearUsuarioApiIntegration crearUsuario)
+    public UsuarioController(ILogger<UsuarioController> logger, ListarUsuarioApiIntegration listarUsuario ,ListarUsuariosApiIntegration listarUsuarios ,CrearUsuarioApiIntegration crearUsuario)
     {
         _logger = logger;
         _listarUsuarios = listarUsuarios;
-        //_listarUsuario = listarUsuario;
+        _listarUsuario = listarUsuario;
         _crearUsuario = crearUsuario;
     }
 
     [HttpPost]
-    public async Task<IActionResult> RegistrarUsuario(String name, String job)
+    public async Task<IActionResult> RegistrarUsuario(String name , String job)
     {
 
         try
         {
-            var response = await _crearUsuario.CreateUser(name, job);
+            var response = await _crearUsuario.CreateUser(name,job);
 
 
             if (response != null)
@@ -66,9 +67,11 @@ public class UsuarioController : Controller
         return View(users);
     }
 
-    public IActionResult ListarUsuario()
+    [HttpGet]
+    public async Task<IActionResult> ListarUsuario(int Id)
     {
-        return View();
+        Usuario usuario = await _listarUsuario.ObtenerUsuario(Id);
+        return View(usuario);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

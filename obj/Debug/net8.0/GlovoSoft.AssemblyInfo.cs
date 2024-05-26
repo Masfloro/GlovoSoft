@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GlovoSoft")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06599fa4dff0b1822f89147fa0a9906843162492")]
 [assembly: System.Reflection.AssemblyProductAttribute("GlovoSoft")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GlovoSoft")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

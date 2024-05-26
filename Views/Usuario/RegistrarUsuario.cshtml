@@ -25,10 +25,13 @@
             <label for="job">Trabajo:</label>
             <input type="text" class="form-control" id="job" name="Job">
         </div>
+        <br>
+        <div style="text-align: center;">
         <button type="submit" class="btn btn-primary">Crear Usuario</button>
+        </div>
     </form>
 
-    
+
 
     @section Scripts {
         <script>
@@ -37,3 +40,28 @@
             }, 5000);
         </script>
     }
+
+    <style>
+        .form-container {
+            display: flex;
+            justify-content: center;
+            /* Centrar horizontalmente */
+            align-items: center;
+            /* Centrar verticalmente */
+            height: 100vh;
+            /* Utilizar toda la altura de la ventana */
+        }
+
+        .form-wrapper {
+            width: 300px;
+            /* Ancho del formulario */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            /* Espacio entre grupos de campos */
+        }
+
+        .btn-submit {
+            width: 100%;
+    </style>

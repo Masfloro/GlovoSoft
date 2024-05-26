@@ -1,4 +1,30 @@
+@model List<GlovoSoft.Integration.DTO.Usuario>
 
-<div>
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero porro voluptates cumque sequi consectetur quae nam aspernatur minima cupiditate fugit dolor et, quis maxime omnis doloribus voluptatem eos voluptatibus culpa?
-</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Job</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Count > 0)
+        {
+            foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.Name</td>
+                    <td>@user.Job</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" class="text-center">No se han encontrado usuarios</td>
+            </tr>
+        }
+    </tbody>
+</table>

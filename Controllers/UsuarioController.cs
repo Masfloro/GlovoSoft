@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using GlovoSoft.Integration;
+using GlovoSoft.Integration.DTO;
 using GlovoSoft.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,14 +10,14 @@ public class UsuarioController : Controller
 {
     private readonly ILogger<UsuarioController> _logger;
 
-    //private readonly ListarUsuariosApiIntegration _listarUsuarios;
+    private readonly ListarUsuariosApiIntegration _listarUsuarios;
     //private readonly ListarUsuarioApiIntegration _listarUsuario;
     private readonly CrearUsuarioApiIntegration _crearUsuario;
 
-    public UsuarioController(ILogger<UsuarioController> logger, CrearUsuarioApiIntegration crearUsuario)
+    public UsuarioController(ILogger<UsuarioController> logger, ListarUsuariosApiIntegration listarUsuarios ,CrearUsuarioApiIntegration crearUsuario)
     {
         _logger = logger;
-        //_listarUsuarios = listarUsuarios;
+        _listarUsuarios = listarUsuarios;
         //_listarUsuario = listarUsuario;
         _crearUsuario = crearUsuario;
     }
@@ -57,10 +58,12 @@ public class UsuarioController : Controller
 
         return View();
     }
-
-    public IActionResult ListarUsuarios()
+    
+    [HttpGet]
+    public async Task<IActionResult> ListarUsuarios()
     {
-        return View();
+        List<Usuario> users = await _listarUsuarios.ListarUsuarios();
+        return View(users);
     }
 
     public IActionResult ListarUsuario()
